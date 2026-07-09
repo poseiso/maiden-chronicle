@@ -1,0 +1,71 @@
+---
+layout: layouts/base.njk
+---
+    <main class="page">
+
+      <div class="breadcrumb">
+        <a href="{{ '/characters/' | url }}"><span>The Godwoken</span></a>
+        <span class="sep">›</span>
+        {{ name }}
+      </div>
+
+      <div class="char-header">
+        <span class="char-header-sigil">{{ sigil }}</span>
+        <h1>{{ name }}</h1>
+        <p class="char-meta">{{ meta }}</p>
+      </div>
+
+      <hr class="divider" />
+
+      {% if quote %}
+      <blockquote class="character-quote">{{ quote }}</blockquote>
+      {% endif %}
+
+      <div class="char-body">
+        {{ content | safe }}
+      </div>
+
+      {% if traits %}
+      <hr class="divider" />
+
+      <div class="char-section">
+        <h3>Known Traits</h3>
+        <ul class="traits-list">
+          {% for trait in traits %}
+          <li>{{ trait }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endif %}
+
+      {% if question %}
+      <div class="char-section">
+        <h3>The Question This Chapter Must Answer</h3>
+        <p>{{ question }}</p>
+      </div>
+      {% endif %}
+
+      <div class="char-section">
+        <h3>Bonds &amp; Relationships</h3>
+        <p><em>{{ relationships or '[Record relationships as the story unfolds.]' }}</em></p>
+      </div>
+
+      {% if notable %}
+      <details class="spoiler-block">
+        <summary><span>Sealed Record — Notable Moments &amp; Revelations</span></summary>
+        <div class="spoiler-content">
+          <div class="char-section">
+            <h3>Notable Moments</h3>
+            <p class="draft-note">{{ notable }}</p>
+          </div>
+        </div>
+      </details>
+      {% endif %}
+
+      <span class="ornament">✦ &nbsp; ✦ &nbsp; ✦</span>
+
+      <div class="site-footer">
+        <a href="{{ '/characters/' | url }}"><span>← Return to the Godwoken</span></a>
+      </div>
+
+    </main>

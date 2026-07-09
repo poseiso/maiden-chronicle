@@ -1,0 +1,30 @@
+---
+layout: layouts/base.njk
+---
+    <main class="page">
+
+      <div class="page-title">
+        <h1>{{ heading }}</h1>
+        <span class="subtitle">{{ subtitle }}</span>
+      </div>
+
+      <hr class="divider" />
+
+      <div class="character-grid">
+        {% for card in cards %}
+        <a href="{{ card.href | url }}" class="character-card">
+          <span class="char-sigil">{{ card.sigil }}</span>
+          <div class="char-name">{{ card.name }}</div>
+          <div class="char-class">{{ card.role }}</div>
+          <div class="char-excerpt">{{ card.excerpt }}</div>
+        </a>
+        {% endfor %}
+      </div>
+
+      <span class="ornament">✦ &nbsp; ✦ &nbsp; ✦</span>
+
+      <div class="site-footer">
+        <a href="{{ '/' | url }}"><span>← Return to the cover</span></a>
+      </div>
+
+    </main>

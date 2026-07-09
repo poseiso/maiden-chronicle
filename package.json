@@ -1,0 +1,16 @@
+{
+  "name": "chronicle-of-maidens",
+  "version": "1.0.0",
+  "description": "Standalone Eleventy site for the Divinity: Original Sin 2 Chronicle of Maidens campaign.",
+  "scripts": {
+    "build": "eleventy",
+    "start": "eleventy --serve"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.2"
+  }
+}

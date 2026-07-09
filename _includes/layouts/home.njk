@@ -1,0 +1,41 @@
+---
+layout: layouts/base.njk
+---
+    <main class="page">
+
+      <div class="landing-title">
+        <span class="vol">{{ volume }}</span>
+        <h1>{{ heading }}</h1>
+        <p class="subtitle">{{ subtitle }}</p>
+      </div>
+
+      <div class="wax-seal" title="{{ sealTitle or 'Seal of the Collared' }}">{{ seal or '☼' }}</div>
+
+      <hr class="divider" />
+
+      <div class="home-intro intro-text">
+        {{ content | safe }}
+      </div>
+
+      <div class="nav-buttons">
+        <a href="{{ '/characters/' | url }}" class="btn">{{ charactersButton or 'Meet the Godwoken' }}</a>
+        <a href="{{ '/log/' | url }}" class="btn">{{ logButton or 'Read the Chronicle' }}</a>
+      </div>
+
+      <hr class="divider" />
+
+      <div class="party-roster">
+        <ul>
+          {% for member in roster %}
+          <li><a href="{{ member.href | url }}">{{ member.name }}</a>, {{ member.summary }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <span class="ornament">✦ &nbsp; ✦ &nbsp; ✦</span>
+
+      <div class="site-footer">
+        <span>{{ footer }}</span>
+      </div>
+
+    </main>

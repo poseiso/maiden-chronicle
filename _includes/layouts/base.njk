@@ -1,0 +1,31 @@
+{% set homeLabelEn = homeLabelEn or "Cover" %}
+{% set charactersLabelEn = charactersLabelEn or "The Godwoken" %}
+{% set logLabelEn = logLabelEn or "The Chronicle" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ title }}</title>
+  <meta name="description" content="{{ description }}" />
+  <meta property="og:title" content="{{ title }}" />
+  <meta property="og:description" content="{{ description }}" />
+  <meta property="og:type" content="website" />
+  <link rel="stylesheet" href="{{ '/css/style.css' | url }}" />
+</head>
+<body>
+
+  <div class="chronicle-wrapper">
+
+    <nav class="tabs">
+      <a href="{{ '/' | url }}" {% if navActive == "home" %}class="active"{% endif %}>{{ homeLabelEn }}</a>
+      <a href="{{ '/characters/' | url }}" {% if navActive == "characters" %}class="active"{% endif %}>{{ charactersLabelEn }}</a>
+      <a href="{{ '/log/' | url }}" {% if navActive == "log" %}class="active"{% endif %}>{{ logLabelEn }}</a>
+    </nav>
+
+    {{ content | safe }}
+
+  </div>
+
+</body>
+</html>

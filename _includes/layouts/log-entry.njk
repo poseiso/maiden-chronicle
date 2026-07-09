@@ -1,0 +1,31 @@
+---
+layout: layouts/base.njk
+---
+    <main class="page">
+
+      <div class="breadcrumb">
+        <a href="{{ '/log/' | url }}"><span>The Chronicle</span></a>
+        <span class="sep">›</span>
+        {{ chapter }}
+      </div>
+
+      <div class="entry-header">
+        <span class="entry-session">{{ chapter }}</span>
+        <h1>{{ heading }}</h1>
+        <span class="entry-dateline">{{ dateline }}</span>
+      </div>
+
+      <hr class="divider" />
+
+      <div class="entry-content">
+        {{ content | safe }}
+      </div>
+
+      <div class="entry-footer">
+        <div class="entry-signature">{{ signature or 'Recorded before anyone involved could object.' }}</div>
+        <div class="entry-nav-links">
+          <a href="{{ '/log/' | url }}"><span>The Chronicle</span></a>
+        </div>
+      </div>
+
+    </main>

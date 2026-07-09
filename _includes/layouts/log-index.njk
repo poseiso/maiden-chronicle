@@ -1,0 +1,42 @@
+---
+layout: layouts/base.njk
+---
+    <main class="page">
+
+      <div class="log-header">
+        <div class="page-title">
+          <h1>{{ heading }}</h1>
+          <span class="subtitle">{{ subtitle }}</span>
+        </div>
+      </div>
+
+      <hr class="divider" />
+
+      <ul class="log-entries">
+        {% for entry in entries %}
+        <li class="log-entry-item">
+          <div class="entry-top">
+            <span class="entry-num">{{ entry.number }}</span>
+            <a href="{{ entry.href | url }}" class="entry-link">{{ entry.title }}</a>
+          </div>
+          <div class="entry-excerpt">{{ entry.excerpt }}</div>
+        </li>
+        {% endfor %}
+      </ul>
+
+      {% if ledgerTitle or ledgerText %}
+      <div class="illuminated-box" style="text-align:center;margin-top:2.5rem;">
+        <div class="char-section" style="margin-bottom:0;">
+          <h3>{{ ledgerTitle }}</h3>
+          <p style="max-width:620px;margin:0.8rem auto 0;">{{ ledgerText }}</p>
+        </div>
+      </div>
+      {% endif %}
+
+      <span class="ornament">✦ &nbsp; ✦ &nbsp; ✦</span>
+
+      <div class="site-footer">
+        <a href="{{ '/' | url }}"><span>← Return to the cover</span></a>
+      </div>
+
+    </main>
